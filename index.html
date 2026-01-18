@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Peta Tematik - Persebaran Rombengan di Kelurahan Blimbing</title>
+    <style>
+        :root {
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --container-bg: white;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-tertiary: #999;
+            --border-color: #eee;
+            --description-bg: #f8f9fa;
+            --description-text: #555;
+            --feature-bg: #f0f4ff;
+            --feature-text: #667eea;
+            --feature-hover: #e8ecff;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode {
+            --bg-gradient-start: #1a1a2e;
+            --bg-gradient-end: #16213e;
+            --container-bg: #2d2d44;
+            --text-primary: #e8e8e8;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #808080;
+            --border-color: #444;
+            --description-bg: #3a3a52;
+            --description-text: #d0d0d0;
+            --feature-bg: #4a4a6a;
+            --feature-text: #a0b0ff;
+            --feature-hover: #5a5a7a;
+            --shadow: rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .container {
+            background: var(--container-bg);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px var(--shadow);
+            max-width: 700px;
+            width: 100%;
+            padding: 60px 40px;
+            text-align: center;
+            animation: slideUp 0.6s ease-out;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            color: var(--text-primary);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            transition: color 0.3s ease;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .description {
+            background: var(--description-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: left;
+            color: var(--description-text);
+            line-height: 1.8;
+            font-size: 0.95em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .description h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            padding: 15px;
+            background: var(--feature-bg);
+            border-radius: 8px;
+            color: var(--feature-text);
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: var(--feature-hover);
+            transform: translateY(-2px);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            min-width: 150px;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f4ff;
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-tertiary);
+            font-size: 0.85em;
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--container-bg);
+            border: 2px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</div>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🗺️</div>
+            <h1>Peta Tematik</h1>
+            <p class="subtitle">Persebaran Rombengan di Kelurahan Blimbing</p>
+        </div>
+
+        <div class="description">
+            <h3>Tentang Aplikasi Ini</h3>
+            <p>Aplikasi WebGIS ini menyediakan visualisasi spasial persebaran Rombengan di wilayah Kelurahan Blimbing. Anda dapat menjelajahi berbagai layer geografis termasuk batas kelurahan, jaringan jalan, fasilitas umum, dan data permukiman dengan mudah.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-item">📍 Visualisasi Peta</div>
+            <div class="feature-item">🔍 Pencarian Layer</div>
+            <div class="feature-item">🎨 Tematik Data</div>
+            <div class="feature-item">📊 Analisis Spasial</div>
+        </div>
+
+        <div class="button-group">
+            <a href="map.html" class="btn btn-primary">Buka Peta</a>
+            <a href="https://github.com/PitoDevID/webgis" class="btn btn-secondary">Informasi Lebih Lanjut</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Peta Tematik Kelurahan Blimbing | Powered by Pito</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
+            
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                updateToggleIcon(true);
+            }
+        }
+
+        // Update toggle button icon
+        function updateToggleIcon(isDark) {
+            const toggle = document.getElementById('themeToggle');
+            toggle.textContent = isDark ? '☀️' : '🌙';
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateToggleIcon(isDarkMode);
+        }
+
+        // Event listener for toggle button
+        document.getElementById('themeToggle').addEventListener('click', toggleDarkMode);
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            const savedTheme = localStorage.getItem('theme');
+            if (!savedTheme) {
+                if (e.matches) {
+                    document.body.classList.add('dark-mode');
+                    updateToggleIcon(true);
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    updateToggleIcon(false);
+                }
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initTheme);
+        initTheme();
+    </script>
+</body>
+</html>
