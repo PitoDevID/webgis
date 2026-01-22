@@ -44,11 +44,39 @@
             padding: 0;
             margin: 0;
         }
+        .abstract-box {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            font-size: 12px;
+            line-height: 1.4;
+            z-index: 100;
+            border-left: 4px solid #2c5aa0;
+        }
+        .abstract-box h4 {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            color: #333;
+            font-weight: bold;
+        }
+        .abstract-box p {
+            margin: 0;
+            color: #555;
+        }
         </style>
         <title>Peta Tematik Persebaran Rombengan di Kelurahan Blimbing</title>
     </head>
     <body>
         <div id="map">
+            <div class="abstract-box">
+                <h4>Abstrak</h4>
+                <p>Peta tematik persebaran rombengan di Kelurahan Blimbing menampilkan distribusi spasial pemukiman, fasilitas umum, jaringan jalan, dan infrastruktur lainnya dalam wilayah kelurahan.</p>
+            </div>
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                 <div id="popup-content"></div>
